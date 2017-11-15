@@ -10,10 +10,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.jmurray.android.beatbox.databinding.FragmentBeatBoxBinding;
+import com.jmurray.android.beatbox.databinding.ListItemSoundBinding;
 
 public class BeatBoxFragment extends Fragment {
+
+    private BeatBox mBeatBox;
+
     public static BeatBoxFragment newInstance() {
         return new BeatBoxFragment();
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        mBeatBox = new BeatBox(getActivity());
     }
 
     @Override
