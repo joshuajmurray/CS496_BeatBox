@@ -13,7 +13,7 @@ import static org.mockito.Mockito.mock;
 public class SoundViewModelTest {
     private BeatBox mBeatbox;
     private Sound mSound;
-    private SoundViewModel mSubject
+    private SoundViewModel mSubject;
 
     @Before
     public void setUp() throws Exception {
@@ -26,6 +26,16 @@ public class SoundViewModelTest {
     @Test
     public void exposesSoundNameAsTitle() {
         assertThat(mSubject.getTitle(), is(mSound.getmName()));
+    }
+
+    @Test
+    public void CallsBeatBoxPlayOnButtonClicked() {
+        mSubject.onButtonClicked();
+        
+        verify(mBeatbox).play(mSound);
+    }
+
+    private BeatBox verify(BeatBox mBeatbox) {
     }
 
 }
