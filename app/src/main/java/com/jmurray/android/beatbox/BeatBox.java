@@ -31,7 +31,7 @@ public class BeatBox {
     }
 
     public void play(Sound sound) {
-        Integer soundId = sound.getmSoundID();
+        Integer soundId = sound.getSoundID();
         if(soundId == null) {
             return;
         }
@@ -60,12 +60,12 @@ public class BeatBox {
     }
 
     private void load(Sound sound) throws IOException {
-        AssetFileDescriptor afd = mAssets.openFd(sound.getmAssetPath());
+        AssetFileDescriptor afd = mAssets.openFd(sound.getAssetPath());
         int soundID = mSoundPool.load(afd, 1);
-        sound.setmSoundID(soundID);
+        sound.setSoundID(soundID);
     }
 
-    public List<Sound> getmSounds() {
+    public List<Sound> getSounds() {
         return mSounds;
     }
 }

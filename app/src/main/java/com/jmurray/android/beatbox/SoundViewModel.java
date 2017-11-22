@@ -4,7 +4,7 @@ import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
 /**
- * Created by joshu on 11/14/2017.
+ * Created by joshua on 11/14/2017.
  */
 
 public class SoundViewModel extends BaseObservable {
@@ -15,14 +15,14 @@ public class SoundViewModel extends BaseObservable {
         mBeatBox = beatBox;
     }
 
-    public Sound getSound() {
-        return mSound;
-    }
-
     @Bindable
     public String getTitle() {
-        return mSound.getmName();
+        return mSound.getName();
     }
+
+//    public Sound getSound() {
+//        return mSound;
+//    }
 
     public void setSound(Sound sound) {
         mSound = sound;
