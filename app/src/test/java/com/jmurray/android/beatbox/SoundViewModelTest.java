@@ -6,6 +6,7 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 /**
  * Created by joshua on 11/20/2017.
@@ -33,9 +34,6 @@ public class SoundViewModelTest {
         mSubject.onButtonClicked();
         
         verify(mBeatbox).play(mSound);
-    }
-
-    private BeatBox verify(BeatBox mBeatbox) {
     }
 
 }
