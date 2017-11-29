@@ -1,13 +1,9 @@
-package com.jmurray.android.beatbox;
-
-/**
- * Created by joshu on 11/14/2017.
- */
+package com.bignerdranch.android.beatbox;
 
 public class Sound {
     private String mAssetPath;
     private String mName;
-    private Integer mSoundID;
+    private Integer mSoundId;
 
     public Sound(String assetPath) {
         mAssetPath = assetPath;
@@ -24,11 +20,11 @@ public class Sound {
         return mName;
     }
 
-    public Integer getSoundID() {
-        return mSoundID;
+    public Integer getSoundId() {
+        return mSoundId;
     }
 
-    public void setSoundID(Integer soundID) {
-        mSoundID = soundID;
+    public void setSoundId(Integer soundId) {
+        mSoundId = soundId;
     }
 }

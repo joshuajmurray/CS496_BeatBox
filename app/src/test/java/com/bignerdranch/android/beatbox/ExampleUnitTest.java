@@ -1,4 +1,4 @@
-package com.jmurray.android.beatbox;
+package com.bignerdranch.android.beatbox;
 
 import org.junit.Test;
 

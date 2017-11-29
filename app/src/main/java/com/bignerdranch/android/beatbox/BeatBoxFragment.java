@@ -1,8 +1,8 @@
-package com.jmurray.android.beatbox;
-
+package com.bignerdranch.android.beatbox;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,10 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.jmurray.android.beatbox.databinding.FragmentBeatBoxBinding;
-import com.jmurray.android.beatbox.databinding.ListItemSoundBinding;
+import com.bignerdranch.android.beatbox.databinding.FragmentBeatBoxBinding;
+import com.bignerdranch.android.beatbox.databinding.ListItemSoundBinding;
 
 import java.util.List;
+
 
 public class BeatBoxFragment extends Fragment {
 
@@ -24,16 +25,16 @@ public class BeatBoxFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setRetainInstance(true);
+        
         mBeatBox = new BeatBox(getActivity());
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         FragmentBeatBoxBinding binding = DataBindingUtil
                 .inflate(inflater, R.layout.fragment_beat_box, container, false);
 
@@ -41,6 +42,12 @@ public class BeatBoxFragment extends Fragment {
         binding.recyclerView.setAdapter(new SoundAdapter(mBeatBox.getSounds()));
 
         return binding.getRoot();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mBeatBox.release();
     }
 
     private class SoundHolder extends RecyclerView.ViewHolder {

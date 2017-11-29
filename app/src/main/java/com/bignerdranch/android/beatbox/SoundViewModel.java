@@ -1,11 +1,8 @@
-package com.jmurray.android.beatbox;
+package com.bignerdranch.android.beatbox;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
-
-/**
- * Created by joshua on 11/14/2017.
- */
+import android.util.Log;
 
 public class SoundViewModel extends BaseObservable {
     private Sound mSound;
@@ -20,9 +17,9 @@ public class SoundViewModel extends BaseObservable {
         return mSound.getName();
     }
 
-//    public Sound getSound() {
-//        return mSound;
-//    }
+    public Sound getSound() {
+        return mSound;
+    }
 
     public void setSound(Sound sound) {
         mSound = sound;
